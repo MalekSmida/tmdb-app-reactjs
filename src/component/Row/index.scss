@@ -1,2 +1,13 @@
 .row {
+  color: white;
+
+  &__movies {
+    display: flex;
+    padding: 20px;
+  }
+  &__poster {
+    object-fit: contain;
+    height: 150px;
+    margin: 0 15px 0 0;
+  }
 }
