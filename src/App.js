@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import { Navbar } from "./component";
-import { Dashboard, Search } from "./page";
+import { Dashboard, Search, Detail } from "./page";
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,6 +20,9 @@ function App() {
           </Route>
           <Route path="/search/:searchTerm">
             <Search />
+          </Route>
+          <Route path="/detail/:movieId">
+            <Detail />
           </Route>
           <Redirect to="/" />
         </Switch>

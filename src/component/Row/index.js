@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Http from "../../services/Http";
 import "./index.scss";
+import { Link } from "react-router-dom";
 
 function Row({ title, requestUrl }) {
   const [movies, setMovies] = useState([]);
@@ -17,12 +18,13 @@ function Row({ title, requestUrl }) {
       <h3>{title}</h3>
       <div className="row__movies">
         {movies?.map((movie) => (
-          <img
-            className="row__poster"
-            key={movie.id}
-            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} //original
-            alt={movie.original_title}
-          />
+          <Link key={movie.id} to={`/detail/${movie.id}`}>
+            <img
+              className="row__poster"
+              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} //original
+              alt={movie.original_title}
+            />
+          </Link>
         ))}
       </div>
     </div>
