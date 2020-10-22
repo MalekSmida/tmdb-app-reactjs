@@ -4,7 +4,7 @@ import "./index.scss";
 // import { useParams } from "react-router-dom";
 
 function Detail() {
-  const [currentMovie, setCurrentMovie] = useState();
+  const [movieData, setMovieData] = useState();
   // let { id } = useParams();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function Detail() {
           process.env.REACT_APP_API_KEY
         }`
       );
-      setCurrentMovie(data.data);
+      setMovieData(data.data);
       console.log(data.data);
     }
     getData();
@@ -23,12 +23,16 @@ function Detail() {
     <div
       style={{
         backgroundSize: "cover",
-        backgroundImage: `url("https://image.tmdb.org/t/p/original/${currentMovie?.backdrop_path}"), linear-gradient(180deg, transparent, rgba(37,37,37,0.61), #111)`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movieData?.backdrop_path}"), linear-gradient(180deg, transparent, rgba(37,37,37,0.61), #111)`,
         backgroundPosition: "center center",
       }}
       className="detail"
     >
-      <h1>detail</h1>
+      <div className="detail__content">
+        <h1>{movieData?.title}</h1>
+        <h4>{movieData?.overview}</h4>
+        <button>Play</button>
+      </div>
     </div>
   );
 }
