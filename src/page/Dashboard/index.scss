@@ -1,3 +1,7 @@
 .dashboard {
-  background-color: black;
+  background-color: #111;
+
+  &__header {
+    height: 200px;
+  }
 }

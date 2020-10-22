@@ -9,7 +9,6 @@ function Row({ title, requestUrl }) {
     async function getData() {
       const data = await Http.get(requestUrl);
       setMovies(data.data.results);
-      console.log(data.data.results);
     }
     getData();
   }, []);
