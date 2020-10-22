@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./index.scss";
+import { Link } from "react-router-dom";
 
 /**
  * Navbar of the application:
@@ -9,16 +10,14 @@ import "./index.scss";
 function Navbar() {
   const [searchText, setSearchText] = useState("");
 
-  const handleSearch = () => {
-    console.log(searchText);
-  };
-
   return (
     <div className="navbar">
-      <img
-        src="https://futureisbright.tech/wp-content/themes/amino-graduate/images/24i-logo-icon.png"
-        alt="24i"
-      />
+      <Link to="/">
+        <img
+          src="https://futureisbright.tech/wp-content/themes/amino-graduate/images/24i-logo-icon.png"
+          alt="24i"
+        />
+      </Link>
       <div className="navbar__search">
         <input
           type="text"
@@ -26,11 +25,12 @@ function Navbar() {
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
-        <img
-          onClick={handleSearch}
-          src="https://cdn3.iconfinder.com/data/icons/video-player-1/154/search-find-magnifier-function-player-keyword-name-512.png"
-          alt="searchIcon"
-        />
+        <Link to={`/search/${searchText}`}>
+          <img
+            src="https://cdn3.iconfinder.com/data/icons/video-player-1/154/search-find-magnifier-function-player-keyword-name-512.png"
+            alt="searchIcon"
+          />
+        </Link>
       </div>
     </div>
   );
