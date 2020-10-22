@@ -14,11 +14,11 @@ function Navbar() {
         alt="24i"
       />
       <div className="navbar__search">
+        <input type="text" placeholder="Search movie" />
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/768px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"
+          src="https://cdn3.iconfinder.com/data/icons/video-player-1/154/search-find-magnifier-function-player-keyword-name-512.png"
           alt="searchIcon"
         />
-        <h3>Search</h3>
       </div>
     </div>
   );
