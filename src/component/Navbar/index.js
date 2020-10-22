@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.scss";
 
 /**
  * Navbar of the application:
@@ -14,7 +15,7 @@ function Navbar() {
       />
       <div className="navbar__search">
         <img
-          src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/768px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"
           alt="searchIcon"
         />
         <h3>Search</h3>

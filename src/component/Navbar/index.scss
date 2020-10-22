@@ -1,2 +1,28 @@
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #111;
+
+  img {
+    object-fit: contain;
+    width: 30px;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    color: white;
+
+    h3 {
+      margin: 0 10px 0 5px;
+      font-weight: 500;
+    }
+
+    img {
+      object-fit: contain;
+      width: 30px;
+    }
+  }
 }
