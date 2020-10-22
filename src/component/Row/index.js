@@ -11,7 +11,7 @@ function Row({ title, requestUrl }) {
       setMovies(data.data.results);
     }
     getData();
-  }, []);
+  }, [requestUrl]);
   return (
     <div className="row">
       <h3>{title}</h3>

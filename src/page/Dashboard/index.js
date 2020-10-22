@@ -18,7 +18,6 @@ function Dashboard() {
           Math.floor(Math.random() * data.data.results.length - 1)
         ]
       );
-      console.log(data.data.results);
     }
     getData();
   }, []);
