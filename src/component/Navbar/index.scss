@@ -3,10 +3,15 @@
   // justify-content: space-between;
   align-items: center;
   padding: 15px 15px;
-  // background-color: #111;
   position: fixed;
   top: 0;
   z-index: 100;
+  width: 100%;
+
+  &--black {
+    background-color: #111;
+    transition: all 0.2s;
+  }
 
   img {
     object-fit: contain;
@@ -18,10 +23,10 @@
     right: 20px;
     display: flex;
     align-items: center;
-    width: 300px;
+    width: 250px;
     height: 30px;
     border-radius: 7px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.8);
 
     img {
       object-fit: contain;
@@ -36,6 +41,7 @@
       padding: 0 0 0 20px;
       height: 100%;
       background-color: transparent;
+      color: white;
 
       &:focus {
         outline: none;
