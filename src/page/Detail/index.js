@@ -32,7 +32,13 @@ function Detail() {
     >
       <div className="detail__content">
         <h1>{movieData?.title}</h1>
+        <h5>{movieData?.release_date}</h5>
         <h4>{movieData?.overview}</h4>
+        <div className="detail__genreFlag">
+          {movieData?.genres.map((genre) => (
+            <h5>{genre?.name}</h5>
+          ))}
+        </div>
         <button onClick={handleOnClick}>Watch Movie</button>
       </div>
     </div>
