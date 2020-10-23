@@ -6,7 +6,7 @@ const initPlayer = async (pVideoRef) => {
   const ui = pVideoRef["ui"];
   const config = {
     controlPanelElements: [
-      "autoplay",
+      // "autoplay",
       "play_pause",
       "time_and_duration",
       "volume",
@@ -43,14 +43,16 @@ const Player = () => {
 
   return (
     <div
+      className="player"
       data-shaka-player-container
       data-shaka-player-cast-receiver-id="7B25EC44"
     >
       {/* <button>Close</button> */}
       <video
+        autoPlay
         data-shaka-player
         ref={videoRef}
-        style={{ width: "100%", height: "100%" }}
+        style={{ height: "100vh", width: "100vw", backgroundColor: "black " }}
       ></video>
     </div>
   );

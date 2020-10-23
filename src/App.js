@@ -26,7 +26,7 @@ function App() {
             <Navbar />
             <Detail />
           </Route>
-          <Route path="/player">
+          <Route path="/player/:movieId">
             <Player />
           </Route>
           <Redirect to="/" />

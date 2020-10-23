@@ -20,7 +20,7 @@ function Detail() {
     getData();
   }, []);
 
-  const handleOnClick = () => history.push("/Player");
+  const handleOnClick = () => history.push(`/Player/${movieData?.id}`);
   return (
     <div
       style={{
