@@ -7,30 +7,43 @@
   color: white;
 
   &__content {
-    width: 40%;
-    margin: 0 0 0 100px;
+    width: 45vw;
+    height: 60vh;
+    margin: 0 0 0 10vw;
+
+    @media (max-width: 425px) {
+      width: 80vw;
+    }
+
+    h1 {
+      font-size: 7vh;
+    }
 
     h5 {
       color: #b9202e;
-      margin: 5px 0 0 0;
+      margin: 0.5vw 0 0 0;
+      font-size: 2vh;
     }
 
     h4 {
-      margin: 20px 0;
+      margin: 2.5vw 0;
       font-weight: 700;
+      font-size: 2.4vh;
     }
     button {
       outline: none;
       color: white;
       border: none;
-      border-radius: 7px;
-      padding: 10px 15px;
+      border-radius: 1vh;
+      padding: 1.2vh 2vh;
       background-color: #b9202e;
       cursor: pointer;
       margin: 15px 0 0 0;
+      font-weight: 700;
+      font-size: 2vh;
 
       &:hover {
-        color: black;
+        color: #b9202e;
         background-color: #e6e6e6;
         transition: all 0.3s;
       }
@@ -43,11 +56,12 @@
 
     h5 {
       font-weight: 700;
-      border-radius: 7px;
-      padding: 7px 10px;
+      border-radius: 1vh;
+      padding: 1vh 2vh;
       background-color: white;
       color: black;
-      margin: 0 5px 5px 0;
+      margin: 0 0.5vh 1vh 0;
+      font-size: 2vh;
     }
   }
 }

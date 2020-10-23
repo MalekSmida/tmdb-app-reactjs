@@ -1,10 +1,14 @@
 .row {
   color: gray;
-  padding: 20px 0 0 20px;
+  padding: 2vh 0 0 2vh;
+
+  h3 {
+    font-size: 3vh;
+  }
 
   &__movies {
     display: flex;
-    padding: 20px 20px 10px 5px;
+    padding: 3vh 3vh 2vh 1vh;
     overflow-y: hidden;
     overflow-x: scroll;
 
@@ -14,8 +18,8 @@
   }
   &__poster {
     object-fit: contain;
-    height: 150px;
-    margin: 0 10px 10px 0;
+    height: 23vh;
+    margin: 0 1.5vh 1.5vh 0;
     transition: transform 0.4s;
 
     &:hover {

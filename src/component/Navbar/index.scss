@@ -2,7 +2,7 @@
   display: flex;
   // justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 1vh 2vh;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -15,33 +15,28 @@
 
   img {
     object-fit: contain;
-    height: 33px;
+    height: 5vh;
   }
 
   &__search {
     position: fixed;
-    right: 20px;
+    right: 2vh;
     display: flex;
     align-items: center;
-    width: 250px;
-    height: 30px;
-    border-radius: 7px;
+    width: 20vw;
+    min-width: 25vh;
+    height: 5.5vh;
+    border-radius: 1vh;
     background-color: rgba(0, 0, 0, 0.8);
-
-    img {
-      object-fit: contain;
-      width: 20px;
-      padding: 0 10px 0 0;
-      cursor: pointer;
-    }
 
     input {
       flex: 1;
       border: none;
-      padding: 0 0 0 20px;
+      padding: 0 0 0 4vh;
       height: 100%;
       background-color: transparent;
       color: white;
+      font-size: 2vh;
 
       &::placeholder {
         color: rgb(207, 207, 207);
