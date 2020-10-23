@@ -22,7 +22,7 @@ function Detail() {
       return data;
     }
     getData();
-  }, []);
+  }, [movieId]);
 
   // Handle click by opening video interface
   const handleOnClick = () => history.push(`/Player/${movieData?.id}`);
