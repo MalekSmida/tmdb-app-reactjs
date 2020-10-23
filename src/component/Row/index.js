@@ -30,7 +30,7 @@ function Row({ title, requestUrl, wrap }) {
       <div className={`row__movies ${wrap && "row__movies--wrap"}`}>
         {movies?.map((movie) => (
           <Link key={movie.id} to={`/detail/${movie.id}`}>
-            {movie && (
+            {movie?.poster_path && (
               <img
                 className="row__poster"
                 src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} //Fetch movie picture from TMDB
