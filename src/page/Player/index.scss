@@ -1,1 +1,24 @@
+.player {
+  &__header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 100%;
+    z-index: 100;
 
+    h1 {
+      margin: 30px 0 0 30px;
+      padding: 7px 20px;
+      background-color: rgba(#000000, 0.8);
+      border-radius: 10px;
+    }
+
+    img {
+      object-fit: contain;
+      width: 50px;
+      margin: 30px 50px 0 0;
+      opacity: 0.9;
+    }
+  }
+}

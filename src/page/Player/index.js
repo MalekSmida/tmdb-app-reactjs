@@ -1,6 +1,8 @@
 import React, { createRef, useEffect } from "react";
 import "shaka-player/dist/controls.css";
 import shaka from "shaka-player/dist/shaka-player.ui.js";
+import "./index.scss";
+import { Link } from "react-router-dom";
 
 const initPlayer = async (pVideoRef) => {
   const ui = pVideoRef["ui"];
@@ -19,12 +21,13 @@ const initPlayer = async (pVideoRef) => {
   player.addEventListener("error", onError);
   controls.addEventListener("error", onError);
   try {
+    // Load manifest
     await player.load(
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
     );
     console.log("The video has now been loaded!");
   } catch (err) {
-    console.log("TCL: err", err);
+    // console.log("TCL: err", err);
     onError(err);
   }
 };
@@ -47,7 +50,15 @@ const Player = () => {
       data-shaka-player-container
       data-shaka-player-cast-receiver-id="7B25EC44"
     >
-      {/* <button>Close</button> */}
+      <div className="player__header">
+        <h1>Video</h1>
+        <Link to="/" style={{ cursor: "pointer" }}>
+          <img
+            src="https://i.pinimg.com/originals/e2/5c/43/e25c43c6a65bdca84c72f0c58524fcd6.png"
+            alt="closeIcon"
+          />
+        </Link>
+      </div>
       <video
         autoPlay
         data-shaka-player
