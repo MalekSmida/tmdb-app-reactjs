@@ -18,14 +18,14 @@ function Navbar() {
         ? setBlackBackground(true)
         : setBlackBackground(false);
     });
-    return () => {
-      window.removeEventListener("scroll");
-    };
+    return () => {};
   }, []);
 
-  // const handleSearch = () => {
-  //   history.push(`{/search/${searchText}}`);
-  // };
+  const handleSearch = (e) => {
+    e.preventDefault();
+    history.push(`/search/${searchText}`);
+    setSearchText("");
+  };
 
   return (
     <div className={`navbar ${blackBackground && "navbar--black"}`}>
@@ -36,13 +36,14 @@ function Navbar() {
         />
       </Link>
       <div className="navbar__search">
-        <input
-          type="text"
-          placeholder="Search movie"
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          // onKeyUp={handleSearch}
-        />
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Search movie"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+        </form>
       </div>
     </div>
   );

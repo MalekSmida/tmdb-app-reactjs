@@ -46,7 +46,7 @@ const Player = () => {
       data-shaka-player-container
       data-shaka-player-cast-receiver-id="7B25EC44"
     >
-      <button>Close</button>
+      {/* <button>Close</button> */}
       <video
         data-shaka-player
         ref={videoRef}

@@ -2,19 +2,17 @@ import React, { useState, useEffect } from "react";
 import Http from "../../services/Http";
 import "./index.scss";
 import { useHistory } from "react-router-dom";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Detail() {
   const [movieData, setMovieData] = useState();
   const history = useHistory();
-  // let { id } = useParams();
+  let { movieId } = useParams();
 
   useEffect(() => {
     async function getData() {
       const data = await Http.get(
-        `/movie/${window.location.href.split("/").reverse()[0]}?api_key=${
-          process.env.REACT_APP_API_KEY
-        }`
+        `/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`
       );
       setMovieData(data.data);
       console.log(data.data);

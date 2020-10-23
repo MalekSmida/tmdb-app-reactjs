@@ -43,6 +43,10 @@
       background-color: transparent;
       color: white;
 
+      &::placeholder {
+        color: rgb(207, 207, 207);
+      }
+
       &:focus {
         outline: none;
       }

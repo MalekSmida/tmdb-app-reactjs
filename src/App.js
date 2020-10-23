@@ -13,15 +13,17 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <Navbar />
         <Switch>
           <Route exact path="/">
+            <Navbar />
             <Dashboard />
           </Route>
           <Route path="/search/:searchTerm">
+            <Navbar />
             <Search />
           </Route>
           <Route path="/detail/:movieId">
+            <Navbar />
             <Detail />
           </Route>
           <Route path="/player">

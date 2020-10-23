@@ -3,7 +3,7 @@ import Http from "../../services/Http";
 import "./index.scss";
 import { Link } from "react-router-dom";
 
-function Row({ title, requestUrl }) {
+function Row({ title, requestUrl, wrap }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Row({ title, requestUrl }) {
   return (
     <div className="row">
       <h3>{title}</h3>
-      <div className="row__movies">
+      <div className={`row__movies ${wrap && "row__movies--wrap"}`}>
         {movies?.map((movie) => (
           <Link key={movie.id} to={`/detail/${movie.id}`}>
             <img
