@@ -2,18 +2,14 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   color: white;
 
   &__content {
-    width: 50%;
-    padding: 30px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
+    width: 40%;
+    margin: 0 0 0 100px;
 
-    h1 {
-    }
     h4 {
       margin: 20px 0;
     }

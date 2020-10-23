@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./index.scss";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 /**
  * Navbar of the application:
@@ -9,6 +9,11 @@ import { Link } from "react-router-dom";
  */
 function Navbar() {
   const [searchText, setSearchText] = useState("");
+  const history = useHistory();
+
+  // const handleSearch = () => {
+  //   history.push(`{/search/${searchText}}`);
+  // };
 
   return (
     <div className="navbar">
@@ -24,13 +29,8 @@ function Navbar() {
           placeholder="Search movie"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
+          // onKeyUp={handleSearch}
         />
-        <Link to={`/search/${searchText}`}>
-          <img
-            src="https://cdn3.iconfinder.com/data/icons/video-player-1/154/search-find-magnifier-function-player-keyword-name-512.png"
-            alt="searchIcon"
-          />
-        </Link>
       </div>
     </div>
   );

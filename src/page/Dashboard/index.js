@@ -27,7 +27,7 @@ function Dashboard() {
       <div
         style={{
           backgroundSize: "cover",
-          backgroundImage: `url("https://image.tmdb.org/t/p/original/${rendomMovie?.backdrop_path}"), linear-gradient(180deg, transparent, rgba(37,37,37,0.61), #111)`,
+          backgroundImage: `linear-gradient(to top, #111 0%, transparent 60%) ,url("https://image.tmdb.org/t/p/original/${rendomMovie?.backdrop_path}")`,
           backgroundPosition: "center center",
         }}
         className="dashboard__header"
