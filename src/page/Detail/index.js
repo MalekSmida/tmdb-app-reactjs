@@ -31,8 +31,9 @@ function Detail() {
       style={{
         backgroundSize: "cover",
         backgroundImage: `${
-          movieData &&
-          `linear-gradient(to right, #000 0%, transparent 100%), url("https://image.tmdb.org/t/p/original/${movieData?.backdrop_path}")`
+          movieData?.backdrop_path
+            ? `linear-gradient(to right, #000 0%, transparent 100%), url("https://image.tmdb.org/t/p/original/${movieData?.backdrop_path}")`
+            : "linear-gradient(to right, #000 0%, transparent 100%)"
         }`,
         backgroundPosition: "center center",
       }}
