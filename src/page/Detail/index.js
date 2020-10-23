@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Http from "../../services/Http";
 import "./index.scss";
+import { useHistory } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
 function Detail() {
   const [movieData, setMovieData] = useState();
+  const history = useHistory();
   // let { id } = useParams();
 
   useEffect(() => {
@@ -19,6 +21,8 @@ function Detail() {
     }
     getData();
   }, []);
+
+  const handleOnClick = () => history.push("/Player");
   return (
     <div
       style={{
@@ -31,7 +35,7 @@ function Detail() {
       <div className="detail__content">
         <h1>{movieData?.title}</h1>
         <h4>{movieData?.overview}</h4>
-        <button>Play</button>
+        <button onClick={handleOnClick}>Watch Movie</button>
       </div>
     </div>
   );

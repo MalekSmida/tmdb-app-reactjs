@@ -31,7 +31,7 @@ function Navbar() {
     <div className={`navbar ${blackBackground && "navbar--black"}`}>
       <Link to="/">
         <img
-          src="https://futureisbright.tech/wp-content/themes/amino-graduate/images/24i-logo-icon.png"
+          src="https://iconape.com/wp-content/files/op/349358/svg/349358.svg"
           alt="24i"
         />
       </Link>
