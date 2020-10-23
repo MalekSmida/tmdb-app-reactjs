@@ -5,13 +5,14 @@ import { Link, useHistory } from "react-router-dom";
 /**
  * Navbar of the application:
  * => Access to home page by clicking 24i icon
- * => Access to search page through search icon
+ * => Access to search page by entering input and click Enter
  */
 function Navbar() {
   const [searchText, setSearchText] = useState("");
   const [blackBackground, setBlackBackground] = useState(false);
   const history = useHistory();
 
+  // Adding event listener => when scroll to 100, Navbar component will have black background
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 100
@@ -21,6 +22,7 @@ function Navbar() {
     return () => {};
   }, []);
 
+  // Handle search input
   const handleSearch = (e) => {
     e.preventDefault();
     history.push(`/search/${searchText}`);

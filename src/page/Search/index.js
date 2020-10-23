@@ -3,6 +3,9 @@ import "./index.scss";
 import { Row } from "../../component";
 import { useParams } from "react-router-dom";
 
+/**
+ * Search page that displays movies based on search name, fetched from TMDB
+ */
 function Search() {
   let { searchTerm } = useParams();
   return (

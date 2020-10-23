@@ -4,11 +4,15 @@ import shaka from "shaka-player/dist/shaka-player.ui.js";
 import "./index.scss";
 import { Link } from "react-router-dom";
 
+/**
+ * initPlayer will initialize the video loaded from manifest with specific config
+ * @param {object} pVideoRef
+ */
 const initPlayer = async (pVideoRef) => {
+  console.log(pVideoRef);
   const ui = pVideoRef["ui"];
   const config = {
     controlPanelElements: [
-      // "autoplay",
       "play_pause",
       "time_and_duration",
       "volume",
@@ -27,14 +31,17 @@ const initPlayer = async (pVideoRef) => {
     );
     console.log("The video has now been loaded!");
   } catch (err) {
-    // console.log("TCL: err", err);
     onError(err);
   }
 };
 
+// Handle error
 const onError = (event) =>
   console.error("Error code", event.detail.code, "object", event.detail);
 
+/**
+ *  Player page that displays the video
+ */
 const Player = () => {
   const videoRef = createRef();
 
@@ -42,7 +49,7 @@ const Player = () => {
     document.addEventListener("shaka-ui-loaded", () =>
       initPlayer(videoRef.current)
     );
-  }, []);
+  }, [videoRef]);
 
   return (
     <div

@@ -9,6 +9,13 @@ import {
   Redirect,
 } from "react-router-dom";
 
+/**
+ * We have 3 main pages:
+ * => Dashboard
+ * => Search
+ * => Detail (displays movie details)
+ * => Player (load video)
+ */
 function App() {
   return (
     <div className="app">
