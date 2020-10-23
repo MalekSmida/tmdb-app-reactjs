@@ -15,7 +15,6 @@ function Detail() {
         `/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`
       );
       setMovieData(data.data);
-      console.log(data.data);
     }
     getData();
   }, []);
