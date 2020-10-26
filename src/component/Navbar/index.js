@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./index.scss";
+
+// Node module
 import { Link, useHistory } from "react-router-dom";
+
+// Local file
+import "./index.scss";
 
 /**
  * Navbar of the application:

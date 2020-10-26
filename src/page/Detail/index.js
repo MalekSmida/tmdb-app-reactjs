@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Http from "../../services/Http";
-import "./index.scss";
+
+// Node module
 import { useHistory, useParams } from "react-router-dom";
+
+// Local file
+import "./index.scss";
+import Http from "../../services/Http";
 
 /**
  * Detail page displays movie: title, release_date, overview, genre

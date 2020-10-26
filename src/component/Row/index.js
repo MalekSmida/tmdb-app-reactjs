@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Http from "../../services/Http";
-import "./index.scss";
+
+// Node module
 import { Link } from "react-router-dom";
+
+// Local file
+import "./index.scss";
+import Http from "../../services/Http";
 
 /**
  * Row component shows title followed by a row of pictures

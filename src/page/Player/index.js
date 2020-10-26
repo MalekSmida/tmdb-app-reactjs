@@ -1,7 +1,11 @@
 import React, { createRef, useEffect } from "react";
-import "shaka-player/dist/controls.css";
+
+// Node module
 import shaka from "shaka-player/dist/shaka-player.ui.js";
+
+// Local file
 import "./index.scss";
+import "shaka-player/dist/controls.css";
 import { Link } from "react-router-dom";
 
 /**

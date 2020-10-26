@@ -1,7 +1,11 @@
 import React from "react";
+
+// Node module
+import { useParams } from "react-router-dom";
+
+// Local file
 import "./index.scss";
 import { Row } from "../../component";
-import { useParams } from "react-router-dom";
 
 /**
  * Search page that displays movies based on search name, fetched from TMDB
