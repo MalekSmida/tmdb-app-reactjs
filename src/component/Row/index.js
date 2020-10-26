@@ -38,13 +38,18 @@ function Row({ title, requestUrl, wrap }) {
               movie.id
             }`}
           >
-            {movie?.poster_path && (
+            {
               <img
                 className="row__poster"
-                src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} //Fetch movie picture from TMDB
+                src={`${
+                  movie?.poster_path
+                    ? `https://image.tmdb.org/t/p/w500/${movie?.poster_path}`
+                    : "https://video.itfaragtv.com/wp-content/themes/codlop-starter/inc/codlop-core/assets/img/no_cl_tax_poster.png"
+                }`} //Fetch movie picture from TMDB
                 alt={movie.original_title}
+                title={movie.original_title}
               />
-            )}
+            }
           </Link>
         ))}
       </div>
