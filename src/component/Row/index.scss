@@ -27,3 +27,23 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .row {
+    padding: 10px 0 0 10px;
+
+    h3 {
+      padding: 5px 0 0 5px;
+      font-size: 18px;
+    }
+
+    &__movies {
+      padding: 10px 10px 8px 5px;
+    }
+
+    &__poster {
+      height: 150px;
+      margin: 0 8px 8px 0;
+    }
+  }
+}

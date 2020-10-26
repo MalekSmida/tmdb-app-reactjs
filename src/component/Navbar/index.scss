@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     width: 20vw;
-    min-width: 25vh;
+    min-width: 25vmax;
     height: 5.5vh;
     border-radius: 1vh;
     background-color: rgba(0, 0, 0, 0.8);
@@ -43,6 +43,28 @@
 
       &:focus {
         outline: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+
+    img {
+      height: 30px;
+    }
+
+    &__search {
+      right: 20px;
+      width: 150px;
+      height: 30px;
+      border-radius: 5px;
+
+      input {
+        padding: 0 0 0 20px;
+        font-size: 14px;
       }
     }
   }

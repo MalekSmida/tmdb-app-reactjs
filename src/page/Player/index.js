@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
  * @param {object} pVideoRef
  */
 const initPlayer = async (pVideoRef) => {
-  console.log(pVideoRef);
   const ui = pVideoRef["ui"];
   const config = {
     controlPanelElements: [

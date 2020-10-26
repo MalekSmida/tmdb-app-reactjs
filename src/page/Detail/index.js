@@ -33,7 +33,7 @@ function Detail() {
         backgroundImage: `${
           movieData?.backdrop_path
             ? `linear-gradient(to right, #000 0%, transparent 100%), url("https://image.tmdb.org/t/p/original/${movieData?.backdrop_path}")`
-            : "linear-gradient(to right, #000 0%, transparent 100%)"
+            : "linear-gradient(to right, #111 0%, #111 100%)"
         }`,
         backgroundPosition: "center center",
       }}
