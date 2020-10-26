@@ -32,7 +32,12 @@ function Row({ title, requestUrl, wrap }) {
       <h3>{title}</h3>
       <div className={`row__movies ${wrap && "row__movies--wrap"}`}>
         {movies?.map((movie) => (
-          <Link key={movie.id} to={`/detail/${movie.id}`}>
+          <Link
+            key={movie.id}
+            to={`/detail/${title === "Popular Tv Series" ? "tv" : "movie"}/${
+              movie.id
+            }`}
+          >
             {movie?.poster_path && (
               <img
                 className="row__poster"

@@ -16,4 +16,17 @@ const getTmdb = async (requestURL) => {
   return data;
 };
 
-export { getTmdb };
+const getDetail = async (type, id) => {
+  let data = { response: undefined, error: undefined };
+  try {
+    const res = await Http.get(
+      `/${type}/${id}?api_key=${process.env.REACT_APP_API_KEY}`
+    );
+    data.response = res;
+  } catch (err) {
+    data.error = err;
+  }
+  return data;
+};
+
+export { getTmdb, getDetail };

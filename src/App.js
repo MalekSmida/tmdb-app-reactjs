@@ -29,11 +29,11 @@ function App() {
             <Navbar />
             <Search />
           </Route>
-          <Route path="/detail/:movieId">
+          <Route path="/detail/:type/:movieId">
             <Navbar />
             <Detail />
           </Route>
-          <Route path="/player/:movieId">
+          <Route path="/player/:type/:movieId">
             <Player />
           </Route>
           <Redirect to="/" />
