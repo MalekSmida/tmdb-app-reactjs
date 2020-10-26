@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import "./index.scss";
 import { Row } from "../../component";
 import request from "../../services/request";
-import Http from "../../services/Http";
+import { getTmdb } from "../../services/Tmdb";
 
 /**
  * Dashboard page that displays:
@@ -19,14 +19,14 @@ function Dashboard() {
   // Fetch popular movies from TMDB and pick a rendom one to display its backdrop
   useEffect(() => {
     async function getData() {
-      const data = await Http.get(request.popularMovies);
+      const res = await getTmdb(request.popularMovies);
       setRendomMovie(
-        data.data.results[
+        res.response.data.results[
           // Random movie index
-          Math.floor(Math.random() * data.data.results.length - 1)
+          Math.floor(Math.random() * res.response.data.results.length - 1)
         ]
       );
-      return data;
+      return res;
     }
     getData();
   }, []);
