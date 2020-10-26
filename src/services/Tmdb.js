@@ -16,6 +16,12 @@ const getTmdb = async (requestURL) => {
   return data;
 };
 
+/**
+ * Fetch specific movie or tv serie (based on type) using id
+ *
+ * @param {String} type
+ * @param {String} id
+ */
 const getDetail = async (type, id) => {
   let data = { response: undefined, error: undefined };
   try {

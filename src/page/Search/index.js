@@ -28,9 +28,7 @@ function Search() {
         <Row
           title={`Search Result for : ${searchTerm}`}
           wrap
-          requestUrl={`/search/movie?api_key=${
-            process.env.REACT_APP_API_KEY
-          }&query=${window.location.href.split("/").reverse()[0]}`}
+          requestUrl={`/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchTerm}`}
         />
       </div>
     </div>
