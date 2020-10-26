@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // Local file
 import "./index.scss";
-import Http from "../../services/Http";
+import { getTmdb } from "../../services/Tmdb";
 
 /**
  * Row component shows title followed by a row of pictures
@@ -18,12 +18,11 @@ import Http from "../../services/Http";
 function Row({ title, requestUrl, wrap }) {
   const [movies, setMovies] = useState([]);
 
-  // Fetch data from TMDB based on requestUrl
   useEffect(() => {
     async function getData() {
-      const data = await Http.get(requestUrl);
-      setMovies(data.data.results);
-      return data;
+      const request = await getTmdb(requestUrl);
+      setMovies(request.response.data.results);
+      return request;
     }
     getData();
   }, [requestUrl]);

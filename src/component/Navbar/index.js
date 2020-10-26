@@ -11,6 +11,7 @@ import "./index.scss";
  * => Access to home page by clicking 24i icon
  * => Access to search page by entering input and click Enter
  */
+
 function Navbar() {
   const [searchText, setSearchText] = useState("");
   const [blackBackground, setBlackBackground] = useState(false);
@@ -29,7 +30,10 @@ function Navbar() {
   // Handle search input
   const handleSearch = (e) => {
     e.preventDefault();
-    history.push(`/search/${searchText}`);
+
+    /^[a-z0-9]+$/i.test(searchText)
+      ? history.push(`/search/${searchText}`)
+      : alert("Invalid input, only alphanumeric characters are allowed!");
     setSearchText("");
   };
 

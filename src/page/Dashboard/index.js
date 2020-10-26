@@ -39,7 +39,7 @@ function Dashboard() {
           backgroundImage: `${
             rendomMovie
               ? `linear-gradient(to top, #111 0%, transparent 60%) ,url("https://image.tmdb.org/t/p/original/${rendomMovie?.backdrop_path}")`
-              : `linear-gradient(to top, #111 0%, transparent 60%) ,url("https://mppmduse2pmpovwapp.azurewebsites.net/wp-content/uploads/2019/09/netflix-background-9.jpg")`
+              : `linear-gradient(#5B5B5B, #111)`
           }`,
           backgroundPosition: "center center",
         }}
