@@ -17,14 +17,21 @@ import { getTmdb } from "../../services/Tmdb";
 
 function Row({ title, requestUrl, wrap }) {
   const [movies, setMovies] = useState([]);
+  const [error, setError] = useState({});
 
   useEffect(() => {
+    let ignore = false;
     async function getData() {
       const request = await getTmdb(requestUrl);
-      setMovies(request.response.data.results);
-      return request;
+      if (!ignore)
+        request.response
+          ? setMovies(request.response.data.results)
+          : setError(request.error);
     }
     getData();
+    return () => {
+      ignore = true;
+    };
   }, [requestUrl]);
 
   return (

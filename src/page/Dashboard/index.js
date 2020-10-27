@@ -15,20 +15,27 @@ import { getTmdb } from "../../services/Tmdb";
  */
 function Dashboard() {
   const [rendomMovie, setRendomMovie] = useState();
+  const [error, setError] = useState({});
 
   // Fetch popular movies from TMDB and pick a rendom one to display its backdrop
   useEffect(() => {
+    let ignore = false;
     async function getData() {
       const res = await getTmdb(request.popularMovies);
-      setRendomMovie(
-        res.response.data.results[
-          // Random movie index
-          Math.floor(Math.random() * res.response.data.results.length - 1)
-        ]
-      );
-      return res;
+      if (!ignore)
+        res.response
+          ? setRendomMovie(
+              res.response.data.results[
+                // Random movie index
+                Math.floor(Math.random() * res.response.data.results.length - 1)
+              ]
+            )
+          : setError(request.error);
     }
     getData();
+    return () => {
+      ignore = true;
+    };
   }, []);
 
   return (

@@ -13,20 +13,26 @@ import { getDetail } from "../../services/Tmdb";
  */
 function Detail() {
   const [movieData, setMovieData] = useState();
+  const [error, setError] = useState({});
   const history = useHistory();
   let { type } = useParams();
   let { movieId } = useParams();
 
   // Fetch the movie data from TMDB using movieId
   useEffect(() => {
+    let ignore = false;
     async function getData() {
       const request = await getDetail(type, movieId);
-      setMovieData(request.response.data);
-      console.log(request.response.data);
-      return request;
+      if (!ignore)
+        request.response
+          ? setMovieData(request.response.data)
+          : setError(request.error);
     }
     getData();
-  }, [movieId]);
+    return () => {
+      ignore = true;
+    };
+  }, [type, movieId]);
 
   // Handle click by opening video interface
   const handleOnClick = () => history.push(`/Player/${movieData?.id}`);

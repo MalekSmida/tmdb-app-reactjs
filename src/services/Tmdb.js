@@ -12,6 +12,7 @@ const getTmdb = async (requestURL) => {
     data.response = res;
   } catch (err) {
     data.error = err;
+    console.log(err);
   }
   return data;
 };
@@ -31,6 +32,7 @@ const getDetail = async (type, id) => {
     data.response = res;
   } catch (err) {
     data.error = err;
+    console.log(err);
   }
   return data;
 };
