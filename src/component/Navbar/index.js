@@ -31,9 +31,9 @@ function Navbar() {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    /^[a-z0-9\s]+$/i.test(searchText)
+    /^[a-z0-9\s\'\-\?\!\:]+$/i.test(searchText)
       ? history.push(`/search/${searchText}`)
-      : alert("Invalid input, only alphanumeric characters are allowed!");
+      : alert("Invalid input, please try again!");
     setSearchText("");
   };
 
