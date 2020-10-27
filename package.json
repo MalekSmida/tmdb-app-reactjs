@@ -1,11 +1,10 @@
 {
   "name": "24i",
   "version": "0.1.0",
+  "description": "Web application for browsing the popular movies, display a short detail page of a selected movie and play a short movie trailer",
+  "author": "Malek Smida",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "node-sass": "^4.14.1",
@@ -35,5 +34,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1"
   }
 }
