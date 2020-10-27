@@ -35,7 +35,7 @@ function Detail() {
   }, [type, movieId]);
 
   // Handle click by opening video interface
-  const handleOnClick = () => history.push(`/Player/${movieData?.id}`);
+  const handleOnClick = () => history.push(`/Player/${type}/${movieData?.id}`);
   return (
     <div
       style={{
