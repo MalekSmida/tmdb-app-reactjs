@@ -6,7 +6,7 @@ Web application for browsing the popular movies, display a short detail page of 
 
 Click image for live preview
 
-[<img src="https://i.ibb.co/HX27jJc/24i.jpg" target="_blank" rel="noopener">](https://i-project-911d5.web.app/)
+[<img src="https://i.ibb.co/HX27jJc/24i.jpg">](https://i-project-911d5.web.app/)
 
 ## Usage
 
@@ -31,7 +31,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000){:target="_blank" rel="noopener"} to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
