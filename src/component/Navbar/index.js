@@ -41,8 +41,10 @@ function Navbar() {
     <div className={`navbar ${blackBackground && "navbar--black"}`}>
       <Link to="/">
         <img
-          src="https://iconape.com/wp-content/files/op/349358/svg/349358.svg"
-          alt="24i"
+          src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1_white-ff84c271cc8c93e00aa0264a425434c329089bdfc6a392987332b5f32903f75c.svg"
+          // src="https://iconape.com/wp-content/files/op/349358/svg/349358.svg"
+          alt="tmdb"
+          // alt="24i"
         />
       </Link>
       <div className="navbar__search">
