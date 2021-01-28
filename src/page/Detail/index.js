@@ -15,8 +15,7 @@ function Detail() {
   const [movieData, setMovieData] = useState();
   const [error, setError] = useState({});
   const history = useHistory();
-  let { type } = useParams();
-  let { movieId } = useParams();
+  let { type, movieId } = useParams();
 
   // Fetch the movie data from TMDB using movieId
   useEffect(() => {
