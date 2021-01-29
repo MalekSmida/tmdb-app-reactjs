@@ -21,20 +21,28 @@ const Player = () => {
 
     (async function () {
       const request = await getDetail(type, movieId);
-      if (mounted) {
-        console.log(request.response);
-        request.response
-          ? movieTrailer(
-              type === "tv"
-                ? request.response.data?.name
-                : request.response.data?.title
-            )
-              .then((res) => {
-                mounted && setMovieUrl(res);
-              })
-              .catch((err) => setMessage("Not found"))
-          : setMessage("Not found");
+      if (!mounted) return;
+      if (type === "tv") {
+        setMessage("Tv shows trailers are not available yet!");
+        return;
       }
+      if (!request.response) {
+        setMessage("Not found");
+        return;
+      }
+      if (!request.response) {
+        setMessage("Not found");
+        return;
+      }
+      movieTrailer(
+        type === "tv"
+          ? request.response.data?.name
+          : request.response.data?.title
+      )
+        .then((res) => {
+          mounted && setMovieUrl(res);
+        })
+        .catch((err) => setMessage("Not found"));
     })();
 
     return () => {
@@ -55,7 +63,7 @@ const Player = () => {
         </div>
       </div>
       {movieUrl ? (
-        <ReactPlayer height="100vh" width="100%" url={movieUrl} />
+        <ReactPlayer height="100vh" width="100%" url={movieUrl} controls />
       ) : (
         <div className="player__message">
           <h1>{message}</h1>
