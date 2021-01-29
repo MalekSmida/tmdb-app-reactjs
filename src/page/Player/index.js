@@ -1,69 +1,58 @@
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import movieTrailer from "movie-trailer";
+// import movieTrailer from "movie-trailer";
 import { useParams } from "react-router-dom";
 
 // Local file
 import "./index.scss";
 import { Link } from "react-router-dom";
-import { getDetail } from "../../services/Tmdb";
+import { getVideo } from "../../services/Tmdb";
 
 /**
  *  Player page that displays the video
  */
 const Player = () => {
-  const [movieUrl, setMovieUrl] = useState();
+  const [movie, setMovie] = useState({
+    url: null,
+  });
   const [message, setMessage] = useState("Loading ..");
   let { type, movieId } = useParams();
 
+  // Fetch the movie data from TMDB using movieId
   useEffect(() => {
-    let mounted = true;
-
+    let ignore = false;
     (async function () {
-      const request = await getDetail(type, movieId);
-      if (!mounted) return;
-      if (type === "tv") {
-        setMessage("Tv shows trailers are not available yet!");
+      const request = await getVideo(type, movieId);
+      if (ignore) return;
+      if (!request.response || !request.response.data.results[0]?.site) {
+        setMessage(`Not found`);
         return;
       }
-      if (!request.response) {
-        setMessage("Not found");
-        return;
-      }
-      if (!request.response) {
-        setMessage("Not found");
-        return;
-      }
-      movieTrailer(
-        type === "tv"
-          ? request.response.data?.name
-          : request.response.data?.title
-      )
-        .then((res) => {
-          mounted && setMovieUrl(res);
-        })
-        .catch((err) => setMessage("Not found"));
+      request.response.data.results[0]?.site === "YouTube"
+        ? setMovie({
+            url: `https://www.youtube.com/watch?v=${request.response.data.results[0].key}`,
+          })
+        : setMovie({
+            url: `https://vimeo.com/${request.response.data.results[0].key}`,
+          });
     })();
-
     return () => {
-      mounted = false;
+      ignore = true;
     };
   }, [type, movieId]);
 
   return (
     <div className="player">
-      <div className="player__header">
-        <div className="player__header__wrapper">
-          <Link to="/" style={{ cursor: "pointer" }}>
-            <img
-              src="https://i.pinimg.com/originals/e2/5c/43/e25c43c6a65bdca84c72f0c58524fcd6.png"
-              alt="closeIcon"
-            />
-          </Link>
-        </div>
+      <div className="player__header" title="Go back Home">
+        <Link to="/" style={{ cursor: "pointer" }}>
+          <img
+            src="https://i.pinimg.com/originals/e2/5c/43/e25c43c6a65bdca84c72f0c58524fcd6.png"
+            alt="closeIcon"
+          />
+        </Link>
       </div>
-      {movieUrl ? (
-        <ReactPlayer height="100vh" width="100%" url={movieUrl} controls />
+      {movie.url ? (
+        <ReactPlayer height="100vh" width="100%" url={movie.url} controls />
       ) : (
         <div className="player__message">
           <h1>{message}</h1>

@@ -37,4 +37,24 @@ const getDetail = async (type, id) => {
   return data;
 };
 
-export { getTmdb, getDetail };
+/**
+ * Fetch specific movie or tv serie trailer video using id
+ *
+ * @param {String} type
+ * @param {String} id
+ */
+const getVideo = async (type, id) => {
+  let data = { response: undefined, error: undefined };
+  try {
+    const res = await Http.get(
+      `/${type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`
+    );
+    data.response = res;
+  } catch (err) {
+    data.error = err;
+    console.log(err);
+  }
+  return data;
+};
+
+export { getTmdb, getDetail, getVideo };

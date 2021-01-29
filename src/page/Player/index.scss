@@ -1,25 +1,15 @@
 .player {
-  &__header {
-    position: fixed;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    z-index: 100;
+  position: relative;
 
-    &__wrapper {
-      background-color: black;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 20%;
-      padding: 3vh 0 1vh 0;
-      border-radius: 0 0 0 10vh;
-    }
+  &__header {
+    position: absolute;
+    right: 8vh;
+    top: 26vh;
+    z-index: 100;
 
     img {
       object-fit: contain;
-      width: 7vh;
-      margin: 0 7vh 0 0;
+      width: 8vh;
     }
   }
 
