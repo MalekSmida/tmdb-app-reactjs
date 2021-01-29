@@ -59,9 +59,7 @@ function Detail() {
             <h5 key={genre?.id}>{genre?.name}</h5>
           ))}
         </div>
-        <button onClick={handleOnClick}>
-          Watch {type === "tv" ? "Tv Serie" : "Movie"}
-        </button>
+        <button onClick={handleOnClick}>Watch Trailer</button>
       </div>
     </div>
   );
